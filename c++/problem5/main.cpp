@@ -55,15 +55,12 @@ string longestPalindrome2(string s) {
         }
     }
 
-    bool find;
     for(int i = 2; i < length; i++) {
-        find = false;
         for(int j = 0; j < length - i; j++) {
             recordArr[j][j + i] = (s.at(j) == s.at(j + i) && recordArr[j + 1][j + i - 1]);
             if(recordArr[j][j + i]) {  // 有长度为(i + 1)的回文子串
                 resultLeftIndex = j;
                 resultRightIndex = j + i;
-                find = true;
             }
         }
     }
