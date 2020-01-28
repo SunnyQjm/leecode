@@ -13,7 +13,6 @@ bool isPalindrome(int x) {
     }
     return true;
 }
-
 int main() {
     cout << isPalindrome(121) << endl;
     cout << isPalindrome(-121) << endl;
