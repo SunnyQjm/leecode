@@ -67,7 +67,7 @@ TEST(Leecode10_isMatch, test8) {
     EXPECT_TRUE(isMatch("bbbba", ".*a*a"));
 }
 TEST(Leecode10_isMatch, test9) {
-    EXPECT_TRUE(isMatch("ab", ".*..b"));
+    EXPECT_FALSE(isMatch("ab", ".*..b"));
 }
 TEST(Leecode10_isMatch, test10) {
     EXPECT_FALSE(isMatch("bccbbabcaccacbcacaa", ".*b.*c*.*.*.c*a*.c"));
