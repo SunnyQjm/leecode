@@ -1,4 +1,5 @@
 #include <iostream>
+#include <gtest/gtest.h>
 
 using namespace std;
 
@@ -27,18 +28,53 @@ bool isMatch(string s, string p) {
 }
 
 
-int main() {
-    cout << isMatch("aa", "a") << endl;
-    cout << isMatch("aa", "a*") << endl;
-    cout << isMatch("ab", ".*") << endl;
-    cout << isMatch("aab", "c*a*b") << endl;
-    cout << isMatch("mississippi", "mis*is*p*.") << endl;
-    cout << isMatch("aaa", "aaaa") << endl;
-    cout << isMatch("aaa", "a.a") << endl;
-    cout << isMatch("aaa", "ab*ac*a") << endl;
-    cout << isMatch("bbbba", ".*a*a") << endl;
-    cout << isMatch("ab", ".*..") << endl;
-    cout << isMatch("bccbbabcaccacbcacaa", ".*b.*c*.*.*.c*a*.c") << endl;
-    return 0;
+
+//////////////////////////////////////////////////////////
+///// 动态规划解法
+//////////////////////////////////////////////////////////
+
+bool isMatch2(string s, string p) {
+
+}
+
+
+TEST(Leecode10_isMatch, test0) {
+    EXPECT_FALSE(isMatch("aa", "a"));
+}
+
+TEST(Leecode10_isMatch, test1) {
+    EXPECT_TRUE(isMatch("aa", "a*"));
+}
+TEST(Leecode10_isMatch, test2) {
+    EXPECT_TRUE(isMatch("ab", ".*"));
+}
+TEST(Leecode10_isMatch, test3) {
+    EXPECT_TRUE(isMatch("aab", "c*a*b"));
+}
+TEST(Leecode10_isMatch, test4) {
+    EXPECT_FALSE(isMatch("mississippi", "mis*is*p*."));
+}
+TEST(Leecode10_isMatch, test5) {
+    EXPECT_FALSE(isMatch("aaa", "aaaa"));
+}
+TEST(Leecode10_isMatch, test6) {
+    EXPECT_TRUE(isMatch("aaa", "a.a"));
+}
+TEST(Leecode10_isMatch, test7) {
+    EXPECT_TRUE(isMatch("aaa", "ab*ac*a"));
+}
+TEST(Leecode10_isMatch, test8) {
+    EXPECT_TRUE(isMatch("bbbba", ".*a*a"));
+}
+TEST(Leecode10_isMatch, test9) {
+    EXPECT_TRUE(isMatch("ab", ".*..b"));
+}
+TEST(Leecode10_isMatch, test10) {
+    EXPECT_FALSE(isMatch("bccbbabcaccacbcacaa", ".*b.*c*.*.*.c*a*.c"));
+}
+
+int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 
