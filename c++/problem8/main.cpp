@@ -3,6 +3,7 @@
 #include "solution.cpp"
 
 using namespace std;
+
 Solution solution;
 
 TEST(Leetcode8_myAtoi, test0) {
