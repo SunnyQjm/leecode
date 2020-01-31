@@ -1,21 +1,24 @@
 #include <iostream>
+#include <gtest/gtest.h>
+#include "solution.cpp"
 
 using namespace std;
 
-bool isPalindrome(int x) {
-    if(x < 0) {
-        return false;
-    }
-    string s = to_string(x);
-    for (int i = 0, j = s.size() - 1; i < j; i++, j--) {
-        if(s.at(i) != s.at(j))
-            return false;
-    }
-    return true;
+Solution solution;
+
+TEST(Leetcode9_isPalindrome, test0) {
+    EXPECT_TRUE(solution.isPalindrome(121));
 }
-int main() {
-    cout << isPalindrome(121) << endl;
-    cout << isPalindrome(-121) << endl;
-    cout << isPalindrome(10) << endl;
-    return 0;
+
+TEST(Leetcode9_isPalindrome, test1) {
+    EXPECT_FALSE(solution.isPalindrome(-121));
+}
+
+TEST(Leetcode9_isPalindrome, test2) {
+    EXPECT_FALSE(solution.isPalindrome(10));
+}
+
+int main(int argc, char **argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
